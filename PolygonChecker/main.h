@@ -1,4 +1,5 @@
 #pragma once
+#include <string.h>
 void printWelcome();
 int printShapeMenu();
 int* getTriangleSides(int* triangleSides);

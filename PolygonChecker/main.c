@@ -22,6 +22,8 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			float sol[3];
+			if (!(strcmp(result, "Not a triangle")))
+				break;
 			getTriangleAngles(triangleSides, sol);
 			for (int i = 0; i < 3; i++) 
 				printf("%.0f ", sol[i] * 57.2958f);
