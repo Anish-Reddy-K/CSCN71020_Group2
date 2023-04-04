@@ -2,4 +2,4 @@
 void printWelcome();
 int printShapeMenu();
 int* getTriangleSides(int* triangleSides);
-void getTriangleAngles(float angles[], float res[]);
+void getTriangleAngles(int triangleSides[], float res[]);
