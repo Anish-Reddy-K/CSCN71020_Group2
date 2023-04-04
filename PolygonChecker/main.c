@@ -19,15 +19,18 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
+			float angles[3], sol[3];
+			getTriangleAngles(angles, sol);
+			for (int i = 0; i < 3; i++) printf("%.0f ", sol[i] * 57.2958f);
 			break;
 		case 0:
 			continueProgram = false;
 			break;
 		default:
 			printf_s("Invalid value entered.\n");
+			continueProgram = false;
 			break;
 		}
 	}
@@ -62,3 +65,13 @@ int* getTriangleSides(int* triangleSides) {
 	}
 	return triangleSides;
 }
+
+void getTriangleAngles(float angles[], float res[])
+{
+	// finding the inside angles of the triangle 
+	float a = angles[0], b = angles[1], c = angles[2];
+	res[0] = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+	res[1] = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c));
+	res[2] = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b));
+}
+
