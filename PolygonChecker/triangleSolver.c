@@ -54,11 +54,11 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-void getTriangleAngles(int triangleSides[], float res[])
+void getTriangleAngles(int triangleSides[], float angles[])
 {
 	// finding the inside angles of the triangle 
 	float a = triangleSides[0], b = triangleSides[1], c = triangleSides[2];
-	res[0] = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));
-	res[1] = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c));
-	res[2] = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b));
+	angles[0] = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+	angles[1] = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c));
+	angles[2] = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b));
 }

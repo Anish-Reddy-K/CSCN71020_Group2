@@ -12,29 +12,36 @@ int main() {
 
 		switch (shapeChoice)
 		{
-		case 1:
+		case 1: // Triangle
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
-			float sol[3];
-			if (!(strcmp(result, "Not a triangle")))
+			float angles[3];
+
+			if (strcmp(result, "Not a triangle") == 0)  
 				break;
-			getTriangleAngles(triangleSides, sol);
-			for (int i = 0; i < 3; i++) 
-				printf("%.0f ", sol[i] * 57.2958f);
+
+			getTriangleAngles(triangleSides, angles); // Angles fucntion
+
+			for (int i = 0; i < 3; i++) // Printing angles
+				printf("%.0f ", angles[i] * 57.2958f);  // Converting radians to degrees
+
 			break;
-		case 2:
+
+		case 2: // Rectangle
 			printf_s("Rectangle selected.\n");
 			int rectangleSides[4] = { 0, 0, 0, 0 };
-			//rectangle
-		case 0:
+
+		case 0: // Quit
 			continueProgram = false;
 			break;
+
 		default:
 			printf_s("Invalid value entered.\n");
-			continueProgram = false;
+			printf_s("Please enter again.\n");
+			continueProgram = true;
 			break;
 		}
 	}
