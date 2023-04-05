@@ -43,7 +43,7 @@ int main() {
 		default:
 			printf_s("Invalid value entered.\n");
 			printf_s("Please enter again.\n");
-			continueProgram = true;
+			continueProgram = false;
 			break;
 		}
 	}
