@@ -1,9 +1,19 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include <math.h>
 
 void printWelcome();
 int printShapeMenu();
-char* analyzeTriangle(int side1, int side2, int side3);
-int* getTriangleSides(int* triangleSides);
+
+// Triangle
+char* analyzeTriangle(int, int, int);
+int* getTriangleSides(int*);
 void getTriangleAngles(int triangleSides[], float angles[]);
+
+// Rectangle
+void swapSort(float*, int);
+void filter(float*, int, float*);
+bool isTriplet(float distinct[]);
+float distanceFormula(float, float, float, float);
+void rectangleFunction();

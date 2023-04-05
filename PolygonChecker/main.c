@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -32,7 +33,8 @@ int main() {
 
 		case 2: // Rectangle
 			printf_s("Rectangle selected.\n");
-			int rectangleSides[4] = { 0, 0, 0, 0 };
+			rectangleFunction();
+			break;
 
 		case 0: // Quit
 			continueProgram = false;
